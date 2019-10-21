@@ -2,7 +2,7 @@
 
 session_start();
 
-echo <<<_END
+echo<<<_END
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,13 +14,29 @@ echo <<<_END
     <title>Questions? Answered</title>
 </head>
 <body>
+<header>
 <h1>Questions? Answered</h1>
 <nav>
     <ul>
         <li><a alt="Link to home" href="index.php">Home</a></li>
-        <li><a alt="Link to sign in" href="sign-in.php">Sign in</a></li>
+_END;
+
+if(isset($_SESSION['loggedIn']))
+{
+    echo "<li><a alt='Link to view surveys' href='view-surveys.php'>My surveys</a></li>";
+    echo "<li><a alt='Link to account details' href='view-account.php'>My account</a></li>";
+    echo "<li><a alt='Link to sign out' href='sign-out.php'>Sign out(".$_SESSION['username'].")</a></li>";
+}
+else{
+    echo "<li><a alt='Link to sign up' href='sign-up.php'>Sign up</a></li>";
+    echo "<li><a alt='Link to sign in' href='sign-in.php'>Sign in</a></li>";
+}
+
+echo" 
     </ul>
 </nav>
-_END
+</header>
+<main>
+";
 
 ?>
