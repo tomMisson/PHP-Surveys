@@ -14,6 +14,8 @@
     {
         echo "<h1>CREATED DB</h1><br/><br/>";
     }
+
+    mysqli_select_db($con, "questionsanswered");
     
     if(mysqli_query($con,"DROP TABLE users") AND mysqli_query($con,"DROP TABLE surveys"))
     {

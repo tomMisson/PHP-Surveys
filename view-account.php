@@ -14,7 +14,7 @@
         }
         if(isset($_POST['submit']))
         {
-            $pswd = $_POST['pswd'];
+            $pswd = sha1($_POST['pswd']);
             $forename = $_POST['firstname'];
             $surname = $_POST['lastname'];
             $email = $_POST['Email'];

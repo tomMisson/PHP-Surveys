@@ -10,7 +10,7 @@
     if(isset($_POST['submit']))
     {
         $usr=$_POST['username'];
-        $pswd=$_POST['password'];
+        $pswd=sha1($_POST['password']);
 
         require_once 'partials/dbconnection.php';//Opens a db connection
 

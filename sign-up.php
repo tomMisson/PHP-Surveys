@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
     if($_POST['pswd']==$_POST['pswdConf'])
     {
         $usr = $_POST['usrname'];
-        $pswd = $_POST['pswd'];
+        $pswd = sha1($_POST['pswd']);
         $forename = $_POST['Forename'];
         $surname = $_POST['Surname'];
         $email = $_POST['email'];

@@ -66,3 +66,30 @@ article {
     margin: 20px auto;
     border-radius: 20px;
 }
+
+section {
+    width: 80%;
+    margin: auto;
+}
+
+summary,
+h3 {
+    display: inline;
+}
+
+details {
+    padding-bottom: 5vh;
+}
+
+table {
+    width: 100%;
+    border: #222 solid;
+}
+
+tr {
+    padding: 10px;
+}
+
+td {
+    padding: 5px;
+}
