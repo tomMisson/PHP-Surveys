@@ -61,11 +61,9 @@
     //// INSERTS USERS DATA////////
     ///////////////////////////////
 
-    mysqli_query($con,"INSERT INTO users(usrname,pswd,firstname,lastname, email,dob,telephoneNumber) VALUES ('SU', 'password', 'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
-    mysqli_query($con,"INSERT INTO users(usrname,pswd,firstname,lastname, email,dob,telephoneNumber) VALUES ('tom', 'tom123', 'Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
+    mysqli_query($con,"INSERT INTO users(usrname,pswd,firstname,lastname, email,dob,telephoneNumber) VALUES ('SU', 'password', 'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199'),('tom', 'tom123', 'Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
     echo "Inserted Users<br/><br/>";
 
-    mysqli_query($con,"INSERT INTO surveys(surveyName, username) VALUES ('Dummy Survey', 'tom')");
-    mysqli_query($con,"INSERT INTO surveys(surveyName, username) VALUES ('Dummy Survey', 'SU')");
+    mysqli_query($con,"INSERT INTO surveys(surveyName, username) VALUES ('Dummy Survey', 'tom'), ('Second Survey', 'tom'), ('Dummy Survey', 'SU')");
     echo "Inserted Surveys<br/><br/>";
 ?>

@@ -1,26 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.error{
+.error {
     color: #ff0000;
 }
 
-body{
+body {
     padding: 40px;
     text-align: center;
 }
 
-h2{
-    padding:20px 0px;
-}
-
-p{
+h2 {
     padding: 20px 0px;
 }
 
-input{
+h3 {
+    text-decoration: underline;
+}
+
+p {
+    padding: 20px 0px;
+}
+
+input {
     margin: 10px;
     padding: 5px 50px;
     outline: 0;
@@ -29,34 +33,34 @@ input{
     text-align: center;
 }
 
-input::placeholder{
+input::placeholder {
     text-align: center;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background: #fff;
     transition: 0.4s;
 }
 
-nav{
+nav {
     margin: 30px;
 }
 
-ul{
+ul {
     display: inline-block;
 }
 
-li{
+.navButtons {
     display: inline;
     margin: 10px;
     border: 2px solid #ddd;
 }
 
-li a{
+li a {
     text-decoration: none;
 }
 
-article{
+article {
     background-color: #ddd;
     width: 80%;
     margin: 20px auto;
