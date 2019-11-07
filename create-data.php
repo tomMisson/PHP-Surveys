@@ -63,7 +63,7 @@
     //// INSERTS USERS DATA////////
     ///////////////////////////////
 
-    mysqli_query($con,"INSERT INTO users(usrname,pswd,firstname,lastname, email,dob,telephoneNumber) VALUES ('SU', 'password', 'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199'),('tom', 'tom123', 'Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
+    mysqli_query($con,"INSERT INTO users(usrname,pswd,firstname,lastname, email,dob,telephoneNumber) VALUES ('SU', 'C8FED00EB2E87F1CEE8E90EBBE870C190AC3848C', 'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199'),('tom', '90FA18F75036F7A6833022AB246C6EE47000912F', 'Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
     echo "Inserted Users<br/><br/>";
 
     mysqli_query($con,"INSERT INTO surveys(surveyName, username) VALUES ('Dummy Survey', 'tom'), ('Second Survey', 'tom'), ('Dummy Survey', 'SU')");

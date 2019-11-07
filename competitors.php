@@ -89,7 +89,7 @@
                 <th>Google forms</th>
             </tr>
             <tr>
-                <td>Multipul choice questions</td>
+                <td>Multiple choice</td>
                 <td>&#10004;</td>
                 <td>&#10004;</td>
                 <td>&#10004;</td>

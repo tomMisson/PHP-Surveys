@@ -24,42 +24,40 @@
             include_once 'partials/dbconnection.php';
 
             mysqli_query($con,"UPDATE users SET pswd='$pswd', firstname='$forename', lastname='$surname', email='$email', dob='$dob',telephoneNumber='$tel' WHERE usrname='".$_SESSION['username']."'");
-
-            echo "<h3>Updated!</h3>";
             header("Location: view-account.php");
+        
         }
         if(isset($_POST['editBtn']))
         {
             echo <<<_END
                 <article>
-                    <form action="view-account.php" method="post">
-                        <label for="username">Username:</label>
-_END;
-                        echo "<input readonly type='text' name='username' placeholder='".$row['usrname']."'><br/>";
+                    <form action='view-account.php' method='post'>
+                        <label for='username'>Username:</label>
+                        <input readonly type='text' name='username' placeholder='$row[usrname]'><br/>
                         
-                        echo "<label for='pswd'>Password:</label>";
-                        echo "<input type='password' name='pswd' placeholder=''><br/>";
+                        <label for='pswd'>Password:</label>
+                        <input type='password' name='pswd' placeholder=''><br/>
 
-                        echo "<label for='firstname'>Forename:</label>";
-                        echo "<input type='text' name='firstname' value='".$row['firstname']."'><br/>";
+                        <label for='firstname'>Forename:</label>
+                        <input type='text' name='firstname' value='$row[firstname]'><br/>
 
-                        echo "<label for='lastname'>Surname:</label>";
-                        echo "<input type='text' name='lastname' value='".$row['lastname']."'><br/>";
+                        <label for='lastname'>Surname:</label>
+                        <input type='text' name='lastname' value='$row[lastname]'><br/>
 
-                        echo "<label for='email'>Email:</label>";
-                        echo "<input type='text' name='Email' value='".$row['email']."'><br/>";
+                        <label for='email'>Email:</label>
+                        <input type='text' name='Email' value='$row[email]'><br/>
 
-                        echo "<label for='telephoneNumber'>Phone number:</label>";
-                        echo "<input type='text' name='telephoneNumber' value='".$row['telephoneNumber']."'><br/>";
+                        <label for='telephoneNumber'>Phone number:</label>
+                        <input type='text' name='telephoneNumber' value='$row[telephoneNumber]'><br/>
 
-                        echo "<label for='dob'>Date of birth:</label>";
-                        echo "<input type='date' name='dob' value='".$row['dob']."'><br/>";
+                        <label for='dob'>Date of birth:</label>
+                        <input type='date' name='dob' value='$row[dob]'><br/>
 
-                    echo"</article>";
-                echo "<input type='submit' name='editBtn' value='Edit'>";
-                echo "<input type='submit' name='submit'>";
-            echo"</form>";
-
+                    </article>
+                <input type='submit' name='editBtn' value='Edit'>
+                <input type='submit' name='submit'>
+            </form>
+_END;
             
         }
         else
@@ -68,33 +66,33 @@ _END;
             <article>
                 <form action="view-account.php" method="post">
                     <label for="username">Username:</label>
-_END;
+
             
-                    echo "<input readonly type='text' name='username' placeholder='".$row['usrname']."'><br/>";
+                    <input readonly type='text' name='username' placeholder='$row[usrname]'><br/>
             
-                    echo "<label for='pswd'>Password:</label>";
-                    echo "<input type='password' name='pswd' placeholder='To change, click edit'><br/>";
+                    <label for='pswd'>Password:</label>
+                    <input type='password' name='pswd' placeholder='To change, click edit'><br/>
 
 
-                    echo "<label for='firstname'>Forename:</label>";
-                    echo "<input readonly type='text' name='firstname' placeholder='".$row['firstname']."'><br/>";
+                    <label for='firstname'>Forename:</label>
+                    <input readonly type='text' name='firstname' placeholder='$row[firstname]'><br/>
 
-                    echo "<label for='lastname'>Surname:</label>";
-                    echo "<input readonly type='text' name='lastname' placeholder='".$row['lastname']."'><br/>";
+                    <label for='lastname'>Surname:</label>
+                    <input readonly type='text' name='lastname' placeholder='$row[lastname]'><br/>
                 
-                    echo "<label for='email'>Email:</label>";
-                    echo "<input readonly type='text' name='Email' placeholder='".$row['email']."'><br/>";
+                    <label for='email'>Email:</label>
+                    <input readonly type='text' name='Email' placeholder='$row[email]'><br/>
 
-                    echo "<label for='telephoneNumber'>Phone number:</label>";
-                    echo "<input readonly type='text' name='telephoneNumber' placeholder='".$row['telephoneNumber']."'><br/>";
+                    <label for='telephoneNumber'>Phone number:</label>
+                    <input readonly type='text' name='telephoneNumber' placeholder='$row[telephoneNumber]'><br/>
 
-                    echo "<label for='dob'>Date of birth:</label>";
-                    echo "<input readonly type='text' name='dob' placeholder='".$row['dob']."'><br/>";
+                    <label for='dob'>Date of birth:</label>
+                    <input readonly type='text' name='dob' placeholder='$row[dob]'><br/>
 
-                    echo"</article>";
-                    echo "<input type='submit' name='editBtn' value='Edit'>";
-                echo"</form>";
-            
+                    </article>
+                    <input type='submit' name='editBtn' value='Edit'>
+                </form>
+_END;
         }
     }
     else{
