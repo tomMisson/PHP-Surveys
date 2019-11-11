@@ -94,6 +94,102 @@
                 <td>&#10004;</td>
                 <td>&#10004;</td>
             </tr>
+            <tr>
+                <td>Short text</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Long text</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Checkboxes</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Dropdown</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>File upload</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Linear scale</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Multiple choice grid</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Phone number</td>
+                <td></td>
+                <td>&#10004;</td>
+                <td>&#10004;</td>
+            </tr>
+            <tr>
+                <td>Statement</td>
+                <td></td>
+                <td>&#10004;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Picture choice</td>
+                <td></td>
+                <td>&#10004;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td></td>
+                <td>&#10004;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Number</td>
+                <td></td>
+                <td>&#10004;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td></td>
+                <td>&#10004;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Payment</td>
+                <td></td>
+                <td>&#10004;</td>
+                <td></td>
+            </tr>
         </table>
     </section>
 

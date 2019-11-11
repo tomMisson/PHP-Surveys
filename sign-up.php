@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 
         include_once 'partials/dbconnection.php';
 
-        mysqli_query($con,"INSERT INTO users(usrname,pswd,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', '$forename', '$surname', '$email', '$dob','$tel')");
+        mysqli_query($con,"INSERT INTO users(usrname,pswd,privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', 'user','$forename', '$surname', '$email', '$dob','$tel')");
     
         $_SESSION['loggedIn'] = true;
         $_SESSION['username'] = $usr;

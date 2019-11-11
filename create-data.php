@@ -30,6 +30,7 @@
     $currentQuery = "CREATE TABLE IF NOT EXISTS users(
         usrname VARCHAR(50) PRIMARY KEY,
         pswd VARCHAR(50) NOT NULL,
+        privileges VARCHAR(5) NOT NULL,
         firstname VARCHAR(50) NOT NULL, 
         lastname VARCHAR(50) NOT NULL, 
         email VARCHAR(50) NOT NULL, 
@@ -63,7 +64,7 @@
     //// INSERTS USERS DATA////////
     ///////////////////////////////
 
-    mysqli_query($con,"INSERT INTO users(usrname,pswd,firstname,lastname, email,dob,telephoneNumber) VALUES ('SU', 'C8FED00EB2E87F1CEE8E90EBBE870C190AC3848C', 'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199'),('tom', '90FA18F75036F7A6833022AB246C6EE47000912F', 'Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
+    mysqli_query($con,"INSERT INTO users(usrname,pswd, privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('SU', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'admin',  'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199'),('tom', '90FA18F75036F7A6833022AB246C6EE47000912F', 'user','Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
     echo "Inserted Users<br/><br/>";
 
     mysqli_query($con,"INSERT INTO surveys(surveyName, username) VALUES ('Dummy Survey', 'tom'), ('Second Survey', 'tom'), ('Dummy Survey', 'SU')");

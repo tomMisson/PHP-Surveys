@@ -18,6 +18,7 @@ h2 {
 
 h3 {
     text-decoration: underline;
+    margin-bottom: 20px;
 }
 
 p {
@@ -88,8 +89,15 @@ table {
 
 tr {
     padding: 10px;
+    border-bottom: 1pt solid black;
 }
 
 td {
     padding: 5px;
+}
+
+td input[type="text"] {
+    padding: 0;
+    border: none;
+    margin: 0;
 }

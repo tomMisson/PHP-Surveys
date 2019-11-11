@@ -4,25 +4,34 @@ session_start();
 
 echo<<<_END
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Questions? Answered</title>
-</head>
-<body>
-<header>
-<h1>Questions? Answered</h1>
-<nav>
-    <ul>
-        <li class='navButtons'><a alt="Link to home" href="index.php">Home</a></li>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Questions? Answered</title>
+    </head>
+    <body>
+    <header>
+    <h1>Questions? Answered</h1>
+    <nav>
+        <ul>
+            <li class='navButtons'><a alt="Link to home" href="index.php">Home</a></li>
 _END;
 
 if(isset($_SESSION['loggedIn']))
 {
+    require_once 'partials/dbconnection.php';
+    $admin = mysqli_query($con, "SELECT usrname FROM users WHERE privileges='admin'");
+
+    while ($row = mysqli_fetch_assoc($admin)) {
+        if($row['usrname'] == $_SESSION['username'])
+        {
+            echo "<li class='navButtons'><a alt='Admin tools' href='admin.php'>Admin tools</a></li>";
+        }
+    }
     echo "<li class='navButtons'><a alt='Link to view surveys' href='view-surveys.php'>My surveys</a></li>";
     echo "<li class='navButtons'><a alt='Link to account details' href='view-account.php'>My account</a></li>";
     echo "<li class='navButtons'><a alt='Link to sign out' href='sign-out.php'>Sign out(".$_SESSION['username'].")</a></li>";
