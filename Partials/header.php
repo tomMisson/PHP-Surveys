@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once 'helper.php';
 
 echo<<<_END
 
@@ -18,7 +19,6 @@ echo<<<_END
     <h1>Questions? Answered</h1>
     <nav>
         <ul>
-            <li class='navButtons'><a alt="Link to home" href="index.php">Home</a></li>
 _END;
 
 if(isset($_SESSION['loggedIn']))
@@ -37,6 +37,7 @@ if(isset($_SESSION['loggedIn']))
     echo "<li class='navButtons'><a alt='Link to sign out' href='sign-out.php'>Sign out(".$_SESSION['username'].")</a></li>";
 }
 else{
+    echo "<li class='navButtons'><a alt='Link to home' href='index.php'>Home</a></li>";
     echo "<li class='navButtons'><a alt='Link to read about similar sites' href='competitors.php'>Competitors</a></li>";
     echo "<li class='navButtons'><a alt='Link to sign up' href='sign-up.php'>Sign up</a></li>";
     echo "<li class='navButtons'><a alt='Link to sign in' href='sign-in.php'>Sign in</a></li>";

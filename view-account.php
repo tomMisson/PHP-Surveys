@@ -71,7 +71,7 @@ _END;
                     <input readonly type='text' name='username' placeholder='$row[usrname]'><br/>
             
                     <label for='pswd'>Password:</label>
-                    <input type='password' name='pswd' placeholder='To change, click edit'><br/>
+                    <input readonly type='password' name='pswd' placeholder='To change, click edit'><br/>
 
 
                     <label for='firstname'>Forename:</label>

@@ -75,8 +75,31 @@
     <section>
         <details>
             <summary><h3>Google forms</h3></summary>
-        
-        
+
+            <p>Google forms is part of the google drive family of products along with Google slides, Google docs and Google sheets as the basic documents. Similar to both the options, you can sign in with your Google account but this is the only sign in option. This results in you giving a lot more data away to google to be able to use the service such as: full name, username, gender, birthday, phone number and email address. </p>
+
+            <p>While there is no native theming options, Google does allow you to change the header colour and image and also the background so customisation is fairly limited. This does make for a very easy to use system however and easily breaks down the layout and responses into 2 distinct tabs. On the theme of theming however, if you do want to use one of the templates, Google does have a separate forms portal that isn’t integrated in to drive making it confusing as to which entrypoint you should use. These templates mainly contain sample questions you can use. </p>
+
+            <img  alt="bar charts from google forms" src="Media/google1.png"/>
+
+            <p>To add to the ease of use, Google implements a button that allows you to view as the user of the form which renders the form in a read only mode as a participant of the survey would see it. This is a feature I would consider adding as I feel it allows you to easily see how the end product would look.</p>
+      
+            <p>To build the survey, the user clicks the + button to add a question and then picks the question type that they want to use and the relevant fields appear. Users also have the option to section the survey up and integrate pictures and video. Overall, the modular design to the forms presentation and building environments allow the user to quickly create a survey with minimal difficulty.</p>
+      
+            <p>The form can be linked with google sheets to allow the data to be viewed in a tabular manner or the user can navigate to the responses tab where they have the data laid out in bar charts, pie charts and collapsible lists. The graphs are also labeled with percentage values for that proportion of the vote allowing a highly graphical experience that can be transferred in to other uses via saving the images.</p>
+
+            <img  alt="bar charts from google forms" src="Media/google2.png"/>
+            
+            <img  alt="bar charts from google forms" src="Media/google3.png"/>
+        </details>
+    </section>
+
+    <section>
+        <details>
+            <summary><h3>Summary</h3></summary>
+
+            <p>In conclusion, there are many aspects to each of the websites. Some features such as being able to dynamically add questions to the survey without reloading the page and having a very icon heavy user interface. Aspects of some of the site however I really dislike such as the cluttered-text heavy user interface of Survey monkey. Going forward with the coursework, I know (and have specified) which aspects of the different sites I have analysed I will use for the coursework. </p>
+
         </details>
     </section>
 
@@ -158,7 +181,7 @@
                 <td>Statement</td>
                 <td></td>
                 <td>&#10004;</td>
-                <td></td>
+                <td>&#10004;</td>
             </tr>
             <tr>
                 <td>Picture choice</td>
@@ -170,7 +193,7 @@
                 <td>Email</td>
                 <td></td>
                 <td>&#10004;</td>
-                <td></td>
+                <td>&#10004;</td>
             </tr>
             <tr>
                 <td>Number</td>
