@@ -108,4 +108,5 @@ article input[type="text"] {
     border: none;
     margin: 0;
     background-color: inherit;
+    cursor: pointer !important;
 }

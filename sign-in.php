@@ -9,8 +9,8 @@
 
     if(isset($_POST['submit']))
     {
-        $usr= $_POST['username'];
-        $pswd=sha1($_POST['password']);
+        $usr= sanitise(validateString($_POST['username'], 2, 50));
+        $pswd=sha1(sanitise(validateString($_POST['password'], 6,50)));
 
         require_once 'partials/dbconnection.php';//Opens a db connection
 

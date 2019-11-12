@@ -6,7 +6,7 @@ function sanitise($str)
 	{
 		$str = stripslashes($str);
     }
-    require_once 'dbconnection.php';
+    $con = mysqli_connect("localhost", "root", "", "questionsanswered");
 	$str = mysqli_real_escape_string($con, $str);
 	$str = htmlentities($str);
 	return $str;
