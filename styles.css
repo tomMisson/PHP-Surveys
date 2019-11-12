@@ -102,3 +102,10 @@ td input[type="text"] {
     border: none;
     margin: 0;
 }
+
+article input[type="text"] {
+    padding: 20px 0px;
+    border: none;
+    margin: 0;
+    background-color: inherit;
+}

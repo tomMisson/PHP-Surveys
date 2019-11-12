@@ -7,7 +7,7 @@ if(isset($_POST['update'])){
 
     if(mysqli_query($con,"UPDATE users SET privileges='$_POST[roles]'WHERE usrname='$_POST[username]'")){}
     {
-        echo "<p>Updated!</p>";
+        echo "<p class='error'>Updated!</p>";
     }
 }
 

@@ -9,7 +9,7 @@
 
     if(isset($_POST['submit']))
     {
-        $usr=$_POST['username'];
+        $usr= $_POST['username'];
         $pswd=sha1($_POST['password']);
 
         require_once 'partials/dbconnection.php';//Opens a db connection
@@ -44,9 +44,9 @@
         <form action="sign-in.php" method="post">
             <p>Sign in to see your surveys</p>
 
-            <input type="text" name="username" placeholder="Username"><br/>
-            <input type="password" name="password" placeholder="Password"><br/>
-            <input type="submit" name="submit">
+            <input required minlength='2' maxlength='50' title="Username" type="text" name="username" placeholder="Username"><br/>
+            <input required minlength='6' maxlength='50' title="Password" type="password" name="password" placeholder="Password"><br/>
+            <input required type="submit" name="submit">
         </form>
 _END;
     echo $message;

@@ -106,7 +106,7 @@
     <section>
         <table>
             <tr>
-                <th>Feature</th>
+                <th>Question Types</th>
                 <th>Survey monkey</th>
                 <th>Typeform</th>
                 <th>Google forms</th>

@@ -16,12 +16,16 @@ if(isset($_POST['submit']))
 
         include_once 'partials/dbconnection.php';
 
-        mysqli_query($con,"INSERT INTO users(usrname,pswd,privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', 'user','$forename', '$surname', '$email', '$dob','$tel')");
-    
-        $_SESSION['loggedIn'] = true;
-        $_SESSION['username'] = $usr;
-
-        header('Location: sign-in.php');
+        if(mysqli_query($con,"INSERT INTO users(usrname,pswd,privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', 'user','$forename', '$surname', '$email', '$dob','$tel')"))
+        {
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['username'] = $usr;
+            header('Location: sign-in.php');
+        }
+        else{
+            echo "<p class='error'>Sign up failed</p>";
+        }
+       
     }
     else
     {
@@ -33,16 +37,16 @@ echo<<<_END
 
     <h2>Sign up</h2>
     <form action="sign-up.php" method="post">
-        <input type="text" name="usrname" placeholder="Username"><br/>
-        <input type="password" name="pswd" placeholder="Password" ><br/>
-        <input type="password" name="pswdConf" placeholder="Confirm password"><br/><br/>
+        <input title="Username for account" type="text" minlength='2' maxlength='50' name="usrname" required placeholder="Username"><br/>
+        <input title="Password for account" type="password" minlength='6' maxlength='50' name="pswd" required placeholder="Password" ><br/>
+        <input title="Confirm password" type="password" minlength='6' maxlength='50' name="pswdConf" required placeholder="Confirm password"><br/><br/>
 
-        <input type="text" name="Forename" placeholder="Forename"><br/>
-        <input type="text" name="Surname" placeholder="Surname"><br/><br/>
+        <input title="Forename" type="text" minlength='1' maxlength='50' name="Forename" required placeholder="Forename"><br/>
+        <input title="Surname" type="text" minlength='1' maxlength='50' name="Surname" required placeholder="Surname"><br/><br/>
         
-        <input type="email" name="email" placeholder="E-mail"><br/>
-        <input type="tel" name="telephoneNumber" placeholder="Phone number"><br/>
-        <input type="date" name="dob"><br/><br/>
+        <input title="Email" type="email" name="email" minlength='5' maxlength='50' placeholder="E-mail"><br/>
+        <input title="Telephone number" minlength='11' maxlength='13' type="tel" name="telephoneNumber" placeholder="Phone number"><br/>
+        <input title="Date of birth" type="date" name="dob"><br/><br/>
 
         <input type="submit" name="submit">
         

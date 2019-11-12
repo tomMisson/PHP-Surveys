@@ -50,6 +50,7 @@
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
         surveyName VARCHAR(100) NOT NULL,
         username VARCHAR(50) NOT NULL,
+        sharable  BOOLEAN NOT NULL,
         CONSTRAINT `user-survey-link`
             FOREIGN KEY (username) REFERENCES users (usrname)
             ON DELETE CASCADE
@@ -64,9 +65,9 @@
     //// INSERTS USERS DATA////////
     ///////////////////////////////
 
-    mysqli_query($con,"INSERT INTO users(usrname,pswd, privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('SU', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'admin',  'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199'),('tom', '90FA18F75036F7A6833022AB246C6EE47000912F', 'user','Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
+    mysqli_query($con,"INSERT INTO users(usrname,pswd, privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('admin', 'E5E9FA1BA31ECD1AE84F75CAAA474F3A663F05F4', 'admin',  'Super', 'Last', '11tmisson@gmail.com', '1999-12-25','+447542274199'),('tom', '90FA18F75036F7A6833022AB246C6EE47000912F', 'user','Tom', 'Misson', '11tmisson@gmail.com', '1999-12-25','+447542274199')");
     echo "Inserted Users<br/><br/>";
 
-    mysqli_query($con,"INSERT INTO surveys(surveyName, username) VALUES ('Dummy Survey', 'tom'), ('Second Survey', 'tom'), ('Dummy Survey', 'SU')");
+    mysqli_query($con,"INSERT INTO surveys(surveyName, username, sharable) VALUES ('Dummy Survey', 'tom', true), ('Second Survey', 'tom', false), ('Dummy Survey', 'admin', false)");
     echo "Inserted Surveys<br/><br/>";
 ?>
