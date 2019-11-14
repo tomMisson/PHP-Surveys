@@ -19,7 +19,7 @@
                 echo<<<_END
                 <a href='view-survey.php?id=$row[Id]'>
                 <article>
-                    <input readonly type='text' value='$row[surveyName]'></input>
+                    <input readonly class='trasparent' type='text' value='$row[surveyName]'></input>
                 </article>
                 </a>
 _END;

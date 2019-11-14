@@ -6,13 +6,13 @@ if(isset($_POST['submit']))
 {
     if($_POST['pswd']==$_POST['pswdConf'])
     {
-        $usr = $_POST['usrname'];
-        $pswd = sha1($_POST['pswd']);
-        $forename = $_POST['Forename'];
-        $surname = $_POST['Surname'];
-        $email = $_POST['email'];
-        $tel = $_POST['telephoneNumber'];
-        $dob = $_POST['dob'];
+        $usr = sanitise(validateString($_POST['usrname'], 2,50));
+        $pswd = sha1(sanitise(validateString($_POST['pswd'], 6,50));
+        $forename = sanitise(validateString($_POST['Forename'], 1, 50));
+        $surname = sanitise(validateString($_POST['Surname'], 1, 50));
+        $email = sanitise(validateString($_POST['email'],5,50));
+        $tel = sanitise(validateString(validateEmail($_POST['telephoneNumber']), 11, 13));
+        $dob = sanitise( $_POST['dob']);
 
         include_once 'partials/dbconnection.php';
 
