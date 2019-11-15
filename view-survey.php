@@ -5,10 +5,14 @@ require_once 'partials/dbconnection.php';
 
 if(isset($_SESSION['loggedIn']))
 {
-    if ($result=mysqli_query($con, "SELECT surveyName,sharable FROM surveys WHERE username='$_SESSION[username]'' AND Id = '$_GET[id]'")mysqli_query($con, "SELECT surveyName,sharable FROM surveys WHERE username='$_SESSION[username]' AND Id = '$_GET[id]'")){
+    if ($result=mysqli_query($con, "SELECT surveyName,sharable, username FROM surveys WHERE username='$_SESSION[username]' AND Id = '$_GET[id]'")){
         $row = mysqli_fetch_assoc($result);
         
-        if($row['sharable']==1)
+        if($row['username']==$_SESSION['username'])
+        {
+            echo "<h2>$row[surveyName]</h2>";
+        }
+        elseif($row['sharable']==1)
         {
             echo "Viewer Mode (logged in)";
         }
@@ -26,13 +30,12 @@ else
     if ($result=mysqli_query($con, "SELECT surveyName,sharable FROM surveys WHERE Id =".$_GET['id']."")){
         $row = mysqli_fetch_assoc($result);
 
-        if($row['sharable']==0 and $row['username']==$_SESSION['username'])
+        if($row['shareable']==1)
         {
-            echo "<h2>$row[surveyName]</h2>";
+            echo "Viewer Mode (not logged in)";
         }
-        else
-        {
-            echo "Viewer Mode";
+        else{
+            echo "Survey Not Shared";
         }
     }
     else{

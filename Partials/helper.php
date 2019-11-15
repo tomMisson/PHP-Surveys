@@ -21,7 +21,7 @@ function validateString($field, $minlength, $maxlength)
 
 	elseif (strlen($field)>$maxlength) 
     { 
-        return "Maximum length: " . $maxlength; 
+        return $field; 
     }
 
     return $field; 
@@ -38,13 +38,21 @@ function validateInt($field, $min, $max)
     return $field; 
 }
 
-function validateEmail($feild)
+function validateEmail($field)
 {
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+    if (!filter_var($field, FILTER_VALIDATE_EMAIL)) 
     {
         return "Invalid email address";
     } 
-    return $feild;
+    return $field;
+}
+
+function validateDate($field)
+{
+    if($field > date("Y-m-d") ) {
+        return "Invalid date";
+    }
+    return $field;
 }
 
 ?>

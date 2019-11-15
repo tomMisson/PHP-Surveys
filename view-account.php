@@ -14,12 +14,12 @@
         }
         if(isset($_POST['submit']))
         {
-            $pswd = sha1($_POST['pswd']);
-            $forename = $_POST['firstname'];
-            $surname = $_POST['lastname'];
-            $email = $_POST['Email'];
-            $tel = $_POST['telephoneNumber'];
-            $dob = $_POST['dob'];
+            $pswd = sha1(sanitise(validateString($_POST['pswd'], 6,50)));
+            $forename = sanitise(validateString($_POST['firstname'], 1, 50));
+            $surname = sanitise(validateString($_POST['lastname'], 1, 50));
+            $email = sanitise(validateString(validateEmail($_POST['Email']),5,50));
+            $tel = sanitise(validateString($_POST['telephoneNumber'], 10, 15));
+            $dob = sanitise(validateDate($_POST['dob']));
 
             include_once 'partials/dbconnection.php';
 
@@ -36,25 +36,24 @@
                         <input readonly type='text' name='username' placeholder='$row[usrname]'><br/>
                         
                         <label for='pswd'>Password:</label>
-                        <input required minlength='6' type='password' name='pswd' placeholder=''><br/>
+                        <input required minlength='6' maxlength='50' title='Password' type='password' name='pswd' value=''><br/>
 
                         <label for='firstname'>Forename:</label>
-                        <input type='text' name='firstname' value='$row[firstname]'><br/>
+                        <input required minlength='1' maxlength='50' title='Firstname' type='text' name='firstname' value='$row[firstname]'><br/>
 
                         <label for='lastname'>Surname:</label>
-                        <input type='text' name='lastname' value='$row[lastname]'><br/>
+                        <input required minlength='1' maxlength='50' title='Surname' type='text' name='lastname' value='$row[lastname]'><br/>
 
                         <label for='email'>Email:</label>
-                        <input type='text' name='Email' value='$row[email]'><br/>
+                        <input required minlength='5' maxlength='50' title='email' type='text' name='Email' value='$row[email]'><br/>
 
                         <label for='telephoneNumber'>Phone number:</label>
-                        <input type='text' name='telephoneNumber' value='$row[telephoneNumber]'><br/>
+                        <input required title="Telephone number" minlength='11' maxlength='13' type='text' name='telephoneNumber' value='$row[telephoneNumber]'> <br/>
 
                         <label for='dob'>Date of birth:</label>
-                        <input type='date' name='dob' value='$row[dob]'><br/>
+                        <input required type='date' name='dob' value='$row[dob]'><br/>
 
                     </article>
-                <input type='submit' name='editBtn' value='Edit'>
                 <input type='submit' name='submit'>
             </form>
 _END;
