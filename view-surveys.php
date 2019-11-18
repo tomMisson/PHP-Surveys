@@ -5,7 +5,7 @@
     {
         echo "<h2>Your surveys</h2>";
 
-        echo "<article><p>&#10010; Create new survey</p></article>";
+        echo "<article><a href='create-survey.php?create=y'>&#10010; Create new survey</a></article>";
         require_once 'partials/dbconnection.php';//Opens a db connection
 
         if ($result=mysqli_query($con, "SELECT Id, surveyName FROM surveys WHERE username='".$_SESSION['username']."'")){
