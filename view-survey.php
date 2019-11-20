@@ -9,13 +9,18 @@ if ($result=mysqli_query($con, "SELECT surveyName,sharable, username FROM survey
 
     if(isset($_SESSION['username']))
     {
-        if($row['username']==$_SESSION['username'])
+        if($row['username']==$_SESSION['username'] or $_SESSION['admin'])
         {
             echo "<h2>$row[surveyName]</h2>";
+
+            
         }
-        if($row['username']!=$_SESSION['username'] and $row['sharable']==1)
+        if($row['username']!=$_SESSION['username'] and $row['sharable']==1 and $_SESSION['admin']==false)
         {
             echo "<p>Signed in viewer of another persons survey</p>";
+        }
+        if($row['sharable']==0 and $row['username']!=$_SESSION['username'] and $_SESSION['admin']==false){
+            echo "<p>Survey not shared</p>";
         }
     }
     else

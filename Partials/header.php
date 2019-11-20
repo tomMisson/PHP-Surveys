@@ -34,7 +34,7 @@ if(isset($_SESSION['loggedIn']))
     }
     echo "<li class='navButtons'><a alt='Link to view surveys' href='view-surveys.php'>My surveys</a></li>";
     echo "<li class='navButtons'><a alt='Link to account details' href='view-account.php'>My account</a></li>";
-    echo "<li class='navButtons'><a alt='Link to sign out' href='sign-out.php'>Sign out(".$_SESSION['username'].")</a></li>";
+    echo "<li class='navButtons'><a alt='Link to sign out' href='sign-out.php'>Sign out($_SESSION[username])</a></li>";
 }
 else{
     echo "<li class='navButtons'><a alt='Link to home' href='index.php'>Home</a></li>";

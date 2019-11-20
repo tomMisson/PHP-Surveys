@@ -17,13 +17,21 @@
         if ($result=mysqli_query($con, "SELECT * FROM users WHERE usrname='$usr' AND pswd='$pswd'")) {
             // determine number of rows result set 
             $n = mysqli_num_rows($result);
-
+            $row = mysqli_fetch_assoc($result);
             
 
             if ($n > 0)//If user exists then authenticate and assign session vars
             {
                 $_SESSION['loggedIn'] = true;
                 $_SESSION['username'] = $usr;
+
+                if($row['privileges'] == 'admin')
+                {
+                    $_SESSION['admin'] = true;
+                }
+                else{
+                    $_SESSION['admin'] = false;
+                }
 
                 header("Location: view-surveys.php");//redirects user to their survey portal
             }

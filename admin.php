@@ -24,6 +24,17 @@ if(isset($_SESSION['loggedIn']))
         
     }
 
+    if(isset($_POST['updateSurveys'])){
+
+        if(isset($_POST['surveyToDel']))
+        {
+            if(mysqli_query($con, "DELETE FROM surveys WHERE id='$_POST[surveyToDel]';"))
+            {
+                echo "<p class='error'>Deleted survey!</p>";
+            }
+        }  
+    }
+
     echo<<<_END
 
         <h2>Admin tools</h2>
@@ -74,7 +85,31 @@ _END;
         </table>
         <input type="submit" name="update" value="Update"/>
         </form>
+
+        <br><br>
+        <h3>Surveys</h3>
+        <p>To edit any survey, click on the survey name.</p>
+        <form method='post'>
+        <table>
+        <tr>
+            <th>Survey Name</th>
+            <th>Owner</th>
+            <th>Delete</th>
+        </tr>
 _END;
+        $users = mysqli_query($con, "SELECT * FROM surveys ORDER BY username");
+
+        while($row = mysqli_fetch_assoc($users)) {
+            echo<<<_END
+            <tr>
+            <td><a href="view-survey.php?id=$row[id]"><input readonly type='text' name='surveyName' class= 'trasparent' value='$row[surveyName]'></a></td>
+            <td>$row[username]</td>
+            <td><input type='radio' name='surveyToDel' value='$row[id]'></td>
+            </tr>
+_END;
+        }
+        echo "</table><input type='submit' name='updateSurveys' value='Update'></form>";
+
 }
 else{
     echo "<p class='error'>You need to be signed in to view this page <a href='sign-in.php'>click here to sign in</a></p>";
