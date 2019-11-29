@@ -67,35 +67,17 @@
     }
 
     ///////////////////////////////
-    // CREATES questiontype TABLE /
-    ///////////////////////////////
-
-    $currentQuery = "CREATE TABLE IF NOT EXISTS questiontype(
-        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-        questionType VARCHAR(100) NOT NULL,
-        maxlength INT(3) UNSIGNED,
-        minlength INT(3) UNSIGNED
-        )";
-
-    if(mysqli_query($con,$currentQuery))
-    {
-        echo "CREATED questiontype<br/><br/>";
-    }
-
-    ///////////////////////////////
     // CREATES questions TABLE ////
     ///////////////////////////////
 
     $currentQuery = "CREATE TABLE IF NOT EXISTS questions(
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
         survey INT(6) UNSIGNED NOT NULL,
-        questionType INT(6) UNSIGNED NOT NULL,
         title VARCHAR(100) NOT NULL,
+        type VARCHAR(50) NOT NULL,
+        maxlength INT(3) UNSIGNED,
+        minlength INT(3) UNSIGNED,
         requiredQuestion BOOLEAN NOT NULL,
-        CONSTRAINT `questions-questiontype-link`
-            FOREIGN KEY (questionType) REFERENCES questiontype(id)
-            ON DELETE CASCADE
-            ON UPDATE RESTRICT,
         CONSTRAINT `survey-question-link`
             FOREIGN KEY (survey) REFERENCES surveys(id)
             ON DELETE CASCADE
@@ -136,22 +118,17 @@
         echo "Inserted Users<br/><br/>";
     }
     
-    if(mysqli_query($con,"INSERT INTO surveys(surveyName, username, sharable) VALUES ('Dummy Survey', 'tom', true), ('Second Survey', 'tom', false), ('Dummy Survey', 'admin', false)"));
+    if(mysqli_query($con,"INSERT INTO surveys(surveyName, username, sharable) VALUES ('Favorites', 'tom', true), ('Dummy Survey', 'admin', false), ('Dummy Survey', 'test', true)"));
     {
         echo "Inserted Surveys<br/><br/>";
     }
 
-    if(mysqli_query($con,"INSERT INTO questiontype(questionType,maxlength,minlength) VALUES ('longTextResponse',500, 0),('shortText',150,0),('number',null,null),('dateResponse',null,null),('email',7,345),('mcq',null,null), ('color',3, 6)"))
-    {
-        echo "Inserted questiontypes<br/><br/>";
-    }
-
-    if(mysqli_query($con,"INSERT INTO questions(survey,questionType,title, requiredQuestion) VALUES (1,2,'Whats your favourite colour?', 1)"))
+    if(mysqli_query($con,"INSERT INTO questions(survey,title,type,minlength,maxlength,requiredQuestion) VALUES (1, 'Favorite word?', 'text', 1, 45, true),(1, 'Favorite date?', 'date', null, null, false), (1, 'Favorite number?', 'number', 1, null, false)"))
     {
         echo "Inserted questions<br/><br/>";
     }
 
-    if(mysqli_query($con,"INSERT INTO answer(question, answer) VALUES (1, 'green'),(1, 'green'),(1, 'blue'), (1, 'red')"))
+    if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES (1, 'Hippo'), (1, 'Dog'), (1, 'Cat'), (2, '1999-12-25'), (2, '1999-12-25'),(2, '1999-12-26'), (3, '0'), (3, '10'),(3, '2')"))
     {
         echo "Inserted questions<br/><br/>";
     }

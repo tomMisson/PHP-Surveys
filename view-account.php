@@ -5,11 +5,9 @@
     {
         echo "<h2>Your account</h2>";
 
-        require_once 'partials/dbconnection.php';//Opens a db connection
+        require_once 'partials/dbconnection.php';
 
         if ($result=mysqli_query($con, "SELECT * FROM users WHERE usrname='".$_SESSION['username']."'")){
-            // determine number of rows result set 
-                
             $row = mysqli_fetch_assoc($result);
         }
         if(isset($_POST['submit']))
@@ -93,6 +91,45 @@ _END;
                 </form>
 _END;
         }
+    }
+
+    else if(isset($_GET['username']) and $_SESSION['admin'])
+    {
+        if ($result=mysqli_query($con, "SELECT * FROM users WHERE usrname='".$_GET['username']."'")){
+            $row = mysqli_fetch_assoc($result);
+        }
+        echo <<<_END
+            <article>
+                <form action="view-account.php" method="post">
+                    <label for="username">Username:</label>
+
+            
+                    <input readonly type='text' name='username' placeholder='$row[usrname]'><br/>
+            
+                    <label for='pswd'>Password:</label>
+                    <input readonly type='password' name='pswd' placeholder='To change, click edit'><br/>
+
+
+                    <label for='firstname'>Forename:</label>
+                    <input readonly type='text' name='firstname' placeholder='$row[firstname]'><br/>
+
+                    <label for='lastname'>Surname:</label>
+                    <input readonly type='text' name='lastname' placeholder='$row[lastname]'><br/>
+                
+                    <label for='email'>Email:</label>
+                    <input readonly type='text' name='Email' placeholder='$row[email]'><br/>
+
+                    <label for='telephoneNumber'>Phone number:</label>
+                    <input readonly type='text' name='telephoneNumber' placeholder='$row[telephoneNumber]'><br/>
+
+                    <label for='dob'>Date of birth:</label>
+                    <input readonly type='text' name='dob' placeholder='$row[dob]'><br/>
+
+                    </article>
+                    <input type='submit' name='editBtn' value='Edit'>
+                </form>
+_END;
+
     }
     else{
         header("Location: sign-in.php");
