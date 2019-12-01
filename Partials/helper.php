@@ -55,4 +55,33 @@ function validateDate($field)
     return $field;
 }
 
+function validateURL($field)
+{
+    if (!filter_var($field, FILTER_VALIDATE_URL)) {
+        return "Invaild url";
+    } 
+    return $field;
+}
+
+function validateTel($field)
+{
+    if($field = filter_var($number, FILTER_SANITIZE_NUMBER_INT))
+    {
+        $field = validateString($field.'', 5, 15);
+        return $field;
+    }
+    else{
+        return "Invalid";
+    }
+}
+
+function validateCol($field)
+{
+    if(!preg_match($field, "/#([a-f0-9]{3}){1,2}\b/i"))
+    {
+        return "Invalid colour";
+    }
+    return $field;
+}
+
 ?>

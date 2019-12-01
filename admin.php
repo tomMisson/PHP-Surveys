@@ -55,7 +55,7 @@ _END;
     $users = mysqli_query($con, "SELECT usrname, firstname, lastname, privileges FROM users WHERE usrname != '$_SESSION[username]'");
 
     while($row = mysqli_fetch_assoc($users)) {
-        echo "<tr><td><a href='view-account.php?username=$row[usrname]'><input readonly type='text' name='username' value='$row[usrname]'></a></td><td>$row[firstname]</td><td>$row[lastname]</td><td>";
+        echo "<tr><td class ='transparent'><a  href='view-account.php?username=$row[usrname]'><input readonly type='text' name='username' value='$row[usrname]'></a></td><td>$row[firstname]</td><td>$row[lastname]</td><td>";
 
         if($row['privileges']=="admin")
         {

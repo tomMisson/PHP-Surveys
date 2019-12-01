@@ -75,8 +75,8 @@
         survey INT(6) UNSIGNED NOT NULL,
         title VARCHAR(100) NOT NULL,
         type VARCHAR(50) NOT NULL,
-        maxlength INT(3) UNSIGNED,
-        minlength INT(3) UNSIGNED,
+        maxlength INT(3) UNSIGNED NOT NULL,
+        minlength INT(3) UNSIGNED NOT NULL,
         requiredQuestion BOOLEAN NOT NULL,
         CONSTRAINT `survey-question-link`
             FOREIGN KEY (survey) REFERENCES surveys(id)
@@ -118,21 +118,21 @@
         echo "Inserted Users<br/><br/>";
     }
     
-    if(mysqli_query($con,"INSERT INTO surveys(surveyName, username, sharable) VALUES ('Favorites', 'tom', true), ('Dummy Survey', 'admin', false), ('Dummy Survey', 'test', true)"));
+    if(mysqli_query($con,"INSERT INTO surveys(surveyName, username, sharable) VALUES ('Favorites', 'tom', true), ('Blank survey', 'tom', false), ('Basic details', 'admin', false), ('Animals', 'test', false)"));
     {
         echo "Inserted Surveys<br/><br/>";
     }
 
-    if(mysqli_query($con,"INSERT INTO questions(survey,title,type,minlength,maxlength,requiredQuestion) VALUES (1, 'Favorite word?', 'text', 1, 45, true),(1, 'Favorite date?', 'date', null, null, false), (1, 'Favorite number?', 'number', 1, null, false)"))
+    if(mysqli_query($con,"INSERT INTO questions(survey,title,type,minlength,maxlength,requiredQuestion) VALUES (1, 'Favorite word?', 'text', 1, 45, true),(1, 'Favorite date?', 'date', 0, 150, false), (1, 'Favorite number?', 'number', 1, 150, false), (1, 'Favorite animal?', 'text', 3, 150, true), (1, 'Favorite chocolate?', 'text', 3, 150, true),(1, 'Favorite chocolate?', 'text', 3, 150, true),(3, 'Name?', 'text', 2, 150, true), (3, 'Date of birth?', 'date', 0, 150, true), (3, 'Website?', 'url', 2, 150, true), (3, 'Phone number?', 'tel', 9, 15, true)"))
     {
         echo "Inserted questions<br/><br/>";
     }
 
     if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES (1, 'Hippo'), (1, 'Dog'), (1, 'Cat'), (2, '1999-12-25'), (2, '1999-12-25'),(2, '1999-12-26'), (3, '0'), (3, '10'),(3, '2')"))
     {
-        echo "Inserted questions<br/><br/>";
+        echo "Inserted answers<br/><br/>";
     }
 
 
-    header('index.php');
+    header('Location: index.php');
 ?>

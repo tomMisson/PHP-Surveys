@@ -17,6 +17,76 @@ section{
     width:85%;
 }
 
+a{
+    color: #fff;
+    text-decoration: none;
+    border: #fff solid 1px;
+    padding: 5px;
+    border-radius: 25px;
+    margin: 0px 10px;
+}
+
+select{
+    margin: 10px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+input{
+    margin: 10px;
+    border-radius: 25px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+input[type="submit"]{
+    border: #fff solid 1px;
+    color: #fff;
+    background-color: inherit;
+}
+
+input[type="text"]{
+    border: none;
+}
+
+input[type="number"]{
+    width: 5%;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+summary{
+    font-size: 1.5rem;
+    outline:none;
+}
+
+.qtitle{
+    font-size: 1.8rem;
+    width: 50%;
+}
+
+.question{
+    width:50%;
+}
+
+.success{
+    color: green;
+}
+
 .error{
     color: red;
+}
+
+#shared{
+    background-color: green;
+}
+
+#notShared{
+    background-color: red;
+}
+
+#question{
+    display: none;
 }

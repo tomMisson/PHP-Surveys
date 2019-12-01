@@ -1,7 +1,7 @@
 <?php
     require_once 'partials/header.php'; 
 
-    if(isset($_SESSION['loggedIn']))
+    if(isset($_SESSION['loggedIn']) and !isset($_GET['username']))
     {
         echo "<h2>Your account</h2>";
 
@@ -95,7 +95,7 @@ _END;
 
     else if(isset($_GET['username']) and $_SESSION['admin'])
     {
-        if ($result=mysqli_query($con, "SELECT * FROM users WHERE usrname='".$_GET['username']."'")){
+        if ($result=mysqli_query($con, "SELECT * FROM users WHERE usrname='$_GET[username]'")){
             $row = mysqli_fetch_assoc($result);
         }
         echo <<<_END
