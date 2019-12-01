@@ -83,5 +83,4 @@ function validateCol($field)
     }
     return $field;
 }
-
 ?>
