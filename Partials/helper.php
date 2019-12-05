@@ -65,7 +65,7 @@ function validateURL($field)
 
 function validateTel($field)
 {
-    if($field = filter_var($number, FILTER_SANITIZE_NUMBER_INT))
+    if($field = filter_var($field, FILTER_SANITIZE_NUMBER_INT))
     {
         $field = validateString($field.'', 5, 15);
         return $field;

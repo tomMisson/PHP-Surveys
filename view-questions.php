@@ -45,7 +45,9 @@ if(isset($_POST['submit']))
                 $answer = sanitise($answer);
             }
             if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES ($row[id], '$answer')"))
-            {}
+            {
+                header('Location: completed-response.php');
+            }
             else
             {
                 echo "<p class='error'>SQL error</p>";
@@ -70,14 +72,12 @@ if(isset($_SESSION['surveyID']))
             echo<<<_END
                 <section id="question-$i" class="question">
                     <h2>$row[title]</h2>
-
-
-_END; 
+_END;
 
             if($row['requiredQuestion'])
             {
                 echo "<input required name='$i-answer' minlength='$row[minlength]' maxlength='$row[maxlength]' type='$row[type]'>";
-                echo "<p  style='display:inline' class='error'>*</p>";
+                echo "<br><p  style='display:inline' class='error'>Required</p>";
             }
             else
             {

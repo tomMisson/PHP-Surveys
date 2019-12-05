@@ -7,11 +7,13 @@ require_once 'partials/dbconnection.php';
 if ($result=mysqli_query($con, "SELECT * FROM surveys WHERE Id = '$_GET[id]'")){
     $row = mysqli_fetch_assoc($result);
     $_SESSION['surveyID'] = $row['id'];
+    $_SESSION['owner'] = false;
 
     if(isset($_SESSION['username']))
     {
         if($row['username']==$_SESSION['username'] or $_SESSION['admin'])
         {
+            $_SESSION['owner'] = true;
             header('Location: survey-builder.php');
         }
         if($row['username']!=$_SESSION['username'] and $row['sharable']==1 and $_SESSION['admin']==false)

@@ -1,23 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     text-align: center;
     background-color: #222;
-    color:#fff;
+    color: #fff;
 }
 
-section{
+section {
     border: #fff solid 0.5px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 25px;
-    width:85%;
+    width: 85%;
 }
 
-a{
+a {
     color: #fff;
     text-decoration: none;
     border: #fff solid 1px;
@@ -26,67 +26,76 @@ a{
     margin: 0px 10px;
 }
 
-select{
+select {
     margin: 10px;
     border-radius: 25px;
     text-align: center;
 }
 
-input{
+input {
     margin: 10px;
     border-radius: 25px;
     padding: 5px 10px;
     text-align: center;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     border: #fff solid 1px;
     color: #fff;
     background-color: inherit;
 }
 
-input[type="text"]{
+input[type="text"] {
     border: none;
 }
 
-input[type="number"]{
+input[type="number"] {
     width: 5%;
 }
 
-input::placeholder{
+input::placeholder {
     text-align: center;
 }
 
-summary{
+summary {
     font-size: 1.5rem;
-    outline:none;
+    outline: none;
 }
 
-.qtitle{
+.qtitle {
     font-size: 1.8rem;
     width: 50%;
 }
 
-.question{
-    width:50%;
+.question {
+    width: 50%;
 }
 
-.success{
+.success {
     color: green;
 }
 
-.error{
+.error {
     color: red;
 }
 
-#shared{
+.link {
+    border: none;
+    text-decoration: underline;
+}
+
+.center {
+    margin: 45vh auto;
+}
+
+#shared {
     background-color: green;
 }
 
-#notShared{
+#notShared {
     background-color: red;
 }
 
-#question{
+#question {
     display: none;
 }

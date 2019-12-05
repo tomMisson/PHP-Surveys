@@ -130,7 +130,7 @@ _END;
 _END;
                 if($row['requiredQuestion'])
                 {
-                    echo "<p  style='display:inline' class='error'>*</p>";
+                    echo "<br><p  style='display:inline' class='error'>Required</p>";
                 }
 
                 echo<<<_END
