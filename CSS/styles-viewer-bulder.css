@@ -50,7 +50,7 @@ input[type="text"] {
 }
 
 input[type="number"] {
-    width: 5%;
+    width: 15%;
 }
 
 input::placeholder {
@@ -60,6 +60,21 @@ input::placeholder {
 summary {
     font-size: 1.5rem;
     outline: none;
+}
+
+table {
+    border: white solid 1px;
+    text-align: center;
+    margin: 5px auto;
+    overflow: scroll;
+}
+
+td{
+    padding: 10px;
+}
+
+th{
+    padding: 10px;
 }
 
 .qtitle {

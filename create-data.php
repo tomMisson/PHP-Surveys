@@ -123,12 +123,12 @@
         echo "Inserted Surveys<br/><br/>";
     }
 
-    if(mysqli_query($con,"INSERT INTO questions(survey,title,type,minlength,maxlength,requiredQuestion) VALUES (1, 'Favorite word?', 'text', 1, 45, true),(1, 'Favorite date?', 'date', 0, 150, false), (1, 'Favorite number?', 'number', 1, 150, false), (1, 'Favorite animal?', 'text', 3, 150, true), (1, 'Favorite chocolate?', 'text', 3, 150, true),(1, 'Favorite chocolate?', 'text', 3, 150, true),(3, 'Name?', 'text', 2, 150, true), (3, 'Date of birth?', 'date', 0, 150, true), (3, 'Website?', 'url', 2, 150, true), (3, 'Phone number?', 'tel', 9, 15, true)"))
+    if(mysqli_query($con,"INSERT INTO questions(survey,title,type,minlength,maxlength,requiredQuestion) VALUES (1, 'Favorite word?', 'text', 1, 45, true),(1, 'Favorite date?', 'date', 0, 150, false), (1, 'Favorite number?', 'number', 1, 150, false), (1, 'Favorite animal?', 'text', 3, 150, false), (1, 'Favorite chocolate?', 'text', 3, 150, true),(3, 'Name?', 'text', 2, 150, true), (3, 'Date of birth?', 'date', 0, 150, true), (3, 'Website?', 'url', 2, 150, true), (3, 'Phone number?', 'tel', 9, 15, true)"))
     {
         echo "Inserted questions<br/><br/>";
     }
 
-    if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES (1, 'Hippo'), (1, 'Dog'), (1, 'Cat'), (2, '1999-12-25'), (2, '1999-12-25'),(2, '1999-12-26'), (3, '0'), (3, '10'),(3, '2')"))
+    if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES (1, 'Hippo'), (2, '1999-12-25'), (3, '0'), (4, 'Chicken'), (5, 'Cadbury')"))
     {
         echo "Inserted answers<br/><br/>";
     }

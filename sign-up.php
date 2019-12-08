@@ -16,16 +16,33 @@ if(isset($_POST['submit']))
 
         include_once 'partials/dbconnection.php';
 
-        if(mysqli_query($con,"INSERT INTO users(usrname,pswd,privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', 'user','$forename', '$surname', '$email', '$dob','$tel')"))
+        if(isset($_SESSION['loggedIn'])&&isset($_SESSION['admin']))
         {
-            $_SESSION['loggedIn'] = true;
-            $_SESSION['username'] = $usr;
-            header('Location: sign-in.php');
+            if(mysqli_query($con,"INSERT INTO users(usrname,pswd,privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', 'user','$forename', '$surname', '$email', '$dob','$tel')") && $_SESSION['admin'])
+            {
+                header('Location: admin.php');
+            }
+            else if(mysqli_query($con,"INSERT INTO users(usrname,pswd,privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', 'user','$forename', '$surname', '$email', '$dob','$tel')"))
+            {
+                header('Location: view-surveys.php');
+            }
+            else
+            {
+                echo "<p class='error'>SQL error</p>"
+            }
         }
-        else{
-            echo "<p class='error'>Sign up failed</p>";
+        else
+        {
+            if(mysqli_query($con,"INSERT INTO users(usrname,pswd,privileges,firstname,lastname, email,dob,telephoneNumber) VALUES ('$usr', '$pswd', 'user','$forename', '$surname', '$email', '$dob','$tel')"))
+            {
+                $_SESSION['loggedIn'] = true;
+                $_SESSION['username'] = $usr;
+                header('Location: sign-in.php');
+            }
+            else{
+                echo "<p class='error'>Sign up failed</p>";
+            }
         }
-       
     }
     else
     {

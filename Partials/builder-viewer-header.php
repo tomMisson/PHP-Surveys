@@ -29,6 +29,10 @@ echo<<<_END
 
         <!-- JQuery import -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!--Load the AJAX API for google charts-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
         
         <title>Questions? Answered</title>
     </head>
@@ -84,6 +88,24 @@ _END;
                                 <a href='view-surveys.php'>Back</a>
                                 </form>";
                         }
+                    }
+                    else if($pageName == 'completed-response.php')
+                    {
+                        echo "<a href='survey-builder.php'>Edit survey</a>";
+                        echo "<a href='view-responses.php'>Responses</a>";
+                        echo " 
+                            <form style='display:inline' method='POST'>";
+                            if($row['sharable'])
+                            {
+                                echo "<input id='shared' type='submit' value='Shared' name='shared'>";
+                            }
+                            else
+                            {
+                                echo "<input id='notShared' type='submit' value='Not Shared' name='shared'>";
+                            }
+                            echo "
+                            <a href='view-surveys.php'>Back</a>
+                            </form>";
                     }
                     else if($pageName == 'view-responses.php')
                     {

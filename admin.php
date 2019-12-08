@@ -23,7 +23,10 @@ if(isset($_SESSION['loggedIn']))
                     echo "<p class='error'>Updated!</p>";
                 }
             }
-            
+        }
+        else if(isset($_POST['new']))
+        {
+            header('Location: sign-up.php');
         }
 
         if(isset($_POST['updateSurveys'])){
@@ -87,6 +90,7 @@ _END;
                 
             </table>
             <input type="submit" name="update" value="Update"/>
+            <input type="submit" name="new" value="Add new user"/>
             </form>
 
             <br><br>
