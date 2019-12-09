@@ -28,7 +28,7 @@ if(isset($_POST['submit']))
             }
             else
             {
-                echo "<p class='error'>SQL error</p>"
+                echo "<p class='error'>SQL error</p>";
             }
         }
         else

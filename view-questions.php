@@ -54,7 +54,10 @@ if(isset($_POST['submit']))
             }
         }
         else{
-
+            if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES ($row[id], ' ')"))
+            {
+                header('Location: completed-response.php');
+            }
         }
     }
 }
@@ -77,7 +80,7 @@ _END;
             if($row['requiredQuestion'])
             {
                 echo "<input required name='$i-answer' minlength='$row[minlength]' maxlength='$row[maxlength]' type='$row[type]'>";
-                echo "<br><p  style='display:inline' class='error'>Required</p>";
+                echo "<br><p style='display:inline' class='error'>Required</p>";
             }
             else
             {

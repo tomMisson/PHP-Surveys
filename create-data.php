@@ -128,7 +128,7 @@
         echo "Inserted questions<br/><br/>";
     }
 
-    if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES (1, 'Hippo'), (2, '1999-12-25'), (3, '0'), (4, 'Chicken'), (5, 'Cadbury')"))
+    if(mysqli_query($con,"INSERT INTO answers(question, answer) VALUES (1, 'Hippo'), (2, '1999-12-25'), (3, '0'), (4, 'Chicken'), (5, 'Cadbury'), (1, 'Log'), (2, '1970-01-01'), (3, ' '), (4, ' '), (5, 'Lint')"))
     {
         echo "Inserted answers<br/><br/>";
     }

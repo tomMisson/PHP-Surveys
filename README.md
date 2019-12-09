@@ -10,7 +10,7 @@ No packages to install.
 
 To create the database, visit this URL first
 ```
-https://localhost:82/2CWK50-PHP/create-data.php
+http://localhost:82/2CWK50-PHP/create-data.php
 ```
 
 If all has run been created successfully then you will be redirected to the home page.
@@ -35,8 +35,33 @@ If all has run been created successfully then you will be redirected to the home
 
 If for some reason you aren't redirected after creating the data locally, enter the URL below: 
 ```
-https://localhost:82/2CWK50-PHP/
+http://localhost:82/2CWK50-PHP/
 ```
+
+## Guidance
+
+The main survey in the site is the favorites survey that belongs to tom (username:tom password:tom123) that is accessible through both the admin tools and the normal UI, it is also view-able/answer-able by anyone as it is shared at:
+```
+http://localhost:82/2CWK50-PHP/view-survey.php?id=1
+```  
+
+As an example of a accessing an unshared survey (when logged in as anyone but the owner of the survey):
+```
+http://localhost:82/2CWK50-PHP/view-survey.php?id=2
+```  
+
+Competitor info can be found in the menu when you're signed out or at this link:
+```
+http://localhost:82/2CWK50-PHP/competitors.php
+```  
+
+Users of the system:
+| Username      | Password      | Role  |
+| ------------- |-------------  | ----- |
+| admin         | secret        | admin |
+| tom           | tom123        |  user |
+| test          | tom123        |  user |
+
 
 ## License
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
