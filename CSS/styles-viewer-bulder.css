@@ -69,11 +69,11 @@ table {
     overflow: scroll;
 }
 
-td{
+td {
     padding: 10px;
 }
 
-th{
+th {
     padding: 10px;
 }
 
@@ -113,4 +113,14 @@ th{
 
 #question {
     display: none;
+}
+
+#chart_div text {
+    fill: white !important;
+}
+
+rect {
+    display: inline !important;
+    margin: 0 auto !important;
+    position: none !important;
 }

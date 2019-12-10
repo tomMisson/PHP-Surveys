@@ -1,0 +1,29 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- local stylesheet and icon import -->
+        <link rel="icon" href="Media/logo.png">
+        <link rel="stylesheet" type="text/css" href="./CSS/styles-viewer-bulder.css">
+
+        <!-- JQuery import -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!--Load the AJAX API for google charts-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        
+        <title>Questions? Answered</title>
+    </head>
+    <body>
+    <header><section>
+                <h1>Favorites</h1><br/><a href='survey-builder.php'>Edit survey</a><a href='view-questions.php'>View survey</a> 
+                            <form style='display:inline' method='POST'><input id='shared' type='submit' value='Shared' name='shared'>
+                            <a href='view-surveys.php'>Back</a>
+                            </form></section></header>
+<main>
+"Favorite word?","Favorite date?","Favorite number?","Favorite animal?","Favorite chocolate?"
+Hippo,1999-12-25,0,Chicken,Cadbury,Log,1970-01-01," "," ",Lint

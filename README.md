@@ -29,6 +29,7 @@ If all has run been created successfully then you will be redirected to the home
 - Can delete questions from surveys
 - Favorites has populated data
 - Can have unlimited questions on one survey (theoretically)
+- If user has no survey responses, they will get a message rather than it not loading any data
 
 
 ## Usage

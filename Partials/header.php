@@ -12,7 +12,7 @@ echo<<<_END
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" type="text/css" href="./CSS/styles.css">
-        <link rel="icon" href="http://catchingfire.ca/wp-content/uploads/2016/09/question-mark-square-01.png">
+        <link rel="icon" href="Media/logo.png">
         <title>Questions? Answered</title>
     </head>
     <body>
