@@ -23,7 +23,7 @@ a {
     border: #fff solid 1px;
     padding: 5px;
     border-radius: 25px;
-    margin: 0px 10px;
+    margin: 10px;
 }
 
 select {
@@ -77,6 +77,10 @@ th {
     padding: 10px;
 }
 
+p{
+    margin: 10px 0px;
+}
+
 .qtitle {
     font-size: 1.8rem;
     width: 50%;
@@ -115,12 +119,3 @@ th {
     display: none;
 }
 
-#chart_div text {
-    fill: white !important;
-}
-
-rect {
-    display: inline !important;
-    margin: 0 auto !important;
-    position: none !important;
-}
